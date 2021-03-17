@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техносети - системы безопасности в Архангельске</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Red+Rose:wght@300;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./modules/jquery-3.5.1.min.js"></script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="wrapper">
+        <!--.quiz__preload.preload   
+        .preload__container.container
+            .preload__logotitle
+                .preload__logo 
+                    img(src="./assets/images/logo/logo-cut.png", alt="Логотип").preload__logo-img
+                h1.preload__title Техносети
+            p.preload__subtitle  Системы видеонаблюдения в Архангельске
+            p.preload__offer Ответьте на 9 вопросов и получите коммерческое предложение в течение 5 минут
+            button.preload__button.button.button_blue
+                span.button__text пройти опрос
+                i.fas.fa-arrow-right.button__arrow
+        -->
+        <div class="quiz">
+          <div class="quiz__header"> 
+            <div class="quiz__header-logo"> <img class="quiz__header-logo-img" src="./assets/images/logo/logo-small.png" alt="Логотип"></div>
+          </div>
+          <div class="quiz__question"> 
+            <p class="quiz__question-text">Для какого объекта Вам необходима система видеонаблюдения?</p>
+          </div>
+          <div class="quiz__question-body"> 
+            <div class="question1">   
+              <label class="question1__item" for="question1__house">
+                <input class="question1__input" id="question1__house" type="radio" checked name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/home.jpg" alt=""></div>
+                <p class="question1__text">Дом</p>
+              </label>
+              <label class="question1__item" for="question1__flat">
+                <input class="question1__input" id="question1__flat" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/flat.jpg" alt=""></div>
+                <p class="question1__text">Квартира </p>
+              </label>
+              <label class="question1__item" for="question1__shop">
+                <input class="question1__input" id="question1__shop" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/shop.jpg" alt=""></div>
+                <p class="question1__text">Магазин</p>
+              </label>
+              <label class="question1__item" for="question1__office">
+                <input class="question1__input" id="question1__office" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/office.jpg" alt=""></div>
+                <p class="question1__text">Офис</p>
+              </label>
+              <label class="question1__item" for="question1__folder">
+                <input class="question1__input" id="question1__folder" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/folder.jpg" alt=""></div>
+                <p class="question1__text">Склад</p>
+              </label>
+              <label class="question1__item" for="question1__cafe">
+                <input class="question1__input" id="question1__cafe" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/cafe.jpg" alt=""></div>
+                <p class="question1__text">Кафе / ресторан</p>
+              </label>
+              <label class="question1__item" for="question1__cottages">
+                <input class="question1__input" id="question1__cottages" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/cottages.jpg" alt=""></div>
+                <p class="question1__text">Поселок</p>
+              </label>
+              <label class="question1__item" for="question1__school">
+                <input class="question1__input" id="question1__school" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/school.jpg" alt=""></div>
+                <p class="question1__text">Школа</p>
+              </label>
+              <label class="question1__item" for="question1__parking">
+                <input class="question1__input" id="question1__parking" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/parking.jpg" alt=""></div>
+                <p class="question1__text">Парковка</p>
+              </label>
+              <label class="question1__item" for="question1__elevator">
+                <input class="question1__input" id="question1__elevator" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/elevator.jpg" alt=""></div>
+                <p class="question1__text">Лифт  </p>
+              </label>
+              <label class="question1__item" for="question1__construct">
+                <input class="question1__input" id="question1__construct" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/construction.jpg" alt=""></div>
+                <p class="question1__text">Стройка  </p>
+              </label>
+              <label class="question1__item" for="question1__other">
+                <input class="question1__input" id="question1__other" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/road.jpg" alt=""></div>
+                <p class="question1__text">Другое  </p>
+              </label>
+            </div>
+          </div>
+          <div class="quiz__buttons"> 
+            <button class="quiz__button quiz__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+            <button class="quiz__button quiz__button_circle button"><span><span class="button__text">i</span></span></button>
+            <button class="quiz__button quiz__button_forward button"><span class="button__text">Далее</span><i class="fas fa-arrow-right button__arrow button__arrow"></i></button>
+          </div><a class="quiz__contact contact" href=""> 
+            <div class="contact__logo"> <img class="contact__img" src="./assets/images/logo/whatsapp_green.png" alt="wh-logo"></div>
+            <p class="contact__text">Возникли вопросы?<br>Напишите нам в WhatsApp</p></a>
+          <!--.quiz__questions 
+          p.quiz__about Пара минут на ответы - и коммерческое предложение у Вас на почте
+          h2.quiz__question
+          .quiz__progress
+              .quiz__progress-line 
+                  .quiz__progress-fill
+          .quiz__stepbody
+              .quiz__step1.step1
+                  
+          .quiz__buttons 
+              button.quiz__back.button
+                  span.button__text Назад
+              button.quiz__forward.button
+                  span.button__text Далее
+          -->
+          <!--.quiz__aside
+          .quiz__choose 
+          .quiz__comment
+              .quiz__specialist 
+                  .quiz__specialist-photo 
+                  .quiz__specialist-info
+                      p.quiz__specialist-name Алексей 
+                      p.quiz__specialist-position Ведущий специалист 
+              .quiz__comment-line 
+              .quiz__comment-body 
+                  p.quiz__comment1
+                  p.quiz__comment2
+                  p.quiz__comment3
+                  p.quiz__comment4
+                  p.quiz__comment5
+                  p.quiz__comment6
+                  p.quiz__comment7
+                  p.quiz__comment8
+                  p.quiz__comment9
+          .quiz__estimate
+          .quiz__link 
+              .quiz__link-logo
+                  img(src="", alt="").quiz__link-img 
+              .quiz__link-info 
+                  p.quiz__link-title
+                  p.quiz__link-connectus
+          -->
+          <!--.quiz__final-page-->
+          <!--.quiz__contact-form-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
