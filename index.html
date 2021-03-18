@@ -15,18 +15,17 @@
   <body>
     <div id="root">
       <div class="wrapper">
-        <!--.quiz__preload.preload   
-        .preload__container.container
-            .preload__logotitle
-                .preload__logo 
-                    img(src="./assets/images/logo/logo-cut.png", alt="Логотип").preload__logo-img
-                h1.preload__title Техносети
-            p.preload__subtitle  Системы видеонаблюдения в Архангельске
-            p.preload__offer Ответьте на 9 вопросов и получите коммерческое предложение в течение 5 минут
-            button.preload__button.button.button_blue
-                span.button__text пройти опрос
-                i.fas.fa-arrow-right.button__arrow
-        -->
+        <div class="quiz__preload preload" id="quiz__preload"> 
+          <div class="preload__container container">
+            <div class="preload__logotitle">
+              <div class="preload__logo"> <img class="preload__logo-img" src="./assets/images/logo/logo-cut.png" alt="Логотип"></div>
+              <h1 class="preload__title">Техносети</h1>
+            </div>
+            <p class="preload__subtitle"> Системы видеонаблюдения в Архангельске</p>
+            <p class="preload__offer">Ответьте на 9 вопросов и получите коммерческое предложение в течение 5 минут</p>
+            <button class="preload__button button button_blue"><span class="button__text">Пройти опрос</span><i class="fas fa-arrow-right button__arrow"></i></button>
+          </div>
+        </div>
         <div class="quiz">
           <div class="quiz__header"> 
             <div class="quiz__header-logo"> <img class="quiz__header-logo-img" src="./assets/images/logo/logo-small.png" alt="Логотип"></div>
@@ -35,66 +34,391 @@
             <p class="quiz__question-text">Для какого объекта Вам необходима система видеонаблюдения?</p>
           </div>
           <div class="quiz__question-body"> 
-            <div class="question1">   
+            <div class="question1" id="question1">    
               <label class="question1__item" for="question1__house">
-                <input class="question1__input" id="question1__house" type="radio" checked name="question1">
+                <input class="question1__input" id="question1__house" data-choise="house" type="radio" checked name="question1">
                 <div class="question1__image"> <img src="./assets/images/questions/question1/home.jpg" alt=""></div>
                 <p class="question1__text">Дом</p>
               </label>
-              <label class="question1__item" for="question1__flat">
-                <input class="question1__input" id="question1__flat" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/flat.jpg" alt=""></div>
-                <p class="question1__text">Квартира </p>
-              </label>
-              <label class="question1__item" for="question1__shop">
-                <input class="question1__input" id="question1__shop" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/shop.jpg" alt=""></div>
-                <p class="question1__text">Магазин</p>
-              </label>
-              <label class="question1__item" for="question1__office">
-                <input class="question1__input" id="question1__office" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/office.jpg" alt=""></div>
-                <p class="question1__text">Офис</p>
-              </label>
               <label class="question1__item" for="question1__folder">
-                <input class="question1__input" id="question1__folder" type="radio" name="question1">
+                <input class="question1__input" id="question1__folder" data-choise="folder" type="radio" name="question1">
                 <div class="question1__image"> <img src="./assets/images/questions/question1/folder.jpg" alt=""></div>
                 <p class="question1__text">Склад</p>
               </label>
-              <label class="question1__item" for="question1__cafe">
-                <input class="question1__input" id="question1__cafe" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/cafe.jpg" alt=""></div>
-                <p class="question1__text">Кафе / ресторан</p>
-              </label>
-              <label class="question1__item" for="question1__cottages">
-                <input class="question1__input" id="question1__cottages" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/cottages.jpg" alt=""></div>
-                <p class="question1__text">Поселок</p>
+              <label class="question1__item" for="question1__shop">
+                <input class="question1__input" id="question1__shop" data-choise="shop" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/shop.jpg" alt=""></div>
+                <p class="question1__text">Магазин</p>
               </label>
               <label class="question1__item" for="question1__school">
-                <input class="question1__input" id="question1__school" type="radio" name="question1">
+                <input class="question1__input" id="question1__school" data-choise="school" type="radio" name="question1">
                 <div class="question1__image"> <img src="./assets/images/questions/question1/school.jpg" alt=""></div>
                 <p class="question1__text">Школа</p>
               </label>
-              <label class="question1__item" for="question1__parking">
-                <input class="question1__input" id="question1__parking" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/parking.jpg" alt=""></div>
-                <p class="question1__text">Парковка</p>
+              <label class="question1__item" for="question1__office">
+                <input class="question1__input" id="question1__office" data-choise="office" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/office.jpg" alt=""></div>
+                <p class="question1__text">Офис</p>
               </label>
-              <label class="question1__item" for="question1__elevator">
-                <input class="question1__input" id="question1__elevator" type="radio" name="question1">
-                <div class="question1__image"> <img src="./assets/images/questions/question1/elevator.jpg" alt=""></div>
-                <p class="question1__text">Лифт  </p>
+              <label class="question1__item" for="question1__tszh">
+                <input class="question1__input" id="question1__tszh" data-choise="tszh" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/cafe.jpg" alt=""></div>
+                <p class="question1__text">ТСЖ  </p>
+              </label>
+              <label class="question1__item" for="question1__flat">
+                <input class="question1__input" id="question1__flat" data-choise="flat" type="radio" name="question1">
+                <div class="question1__image"> <img src="./assets/images/questions/question1/flat.jpg" alt=""></div>
+                <p class="question1__text">Квартира </p>
               </label>
               <label class="question1__item" for="question1__construct">
-                <input class="question1__input" id="question1__construct" type="radio" name="question1">
+                <input class="question1__input" id="question1__construct" data-choise="construction" type="radio" name="question1">
                 <div class="question1__image"> <img src="./assets/images/questions/question1/construction.jpg" alt=""></div>
-                <p class="question1__text">Стройка  </p>
+                <p class="question1__text">Строительство  </p>
               </label>
               <label class="question1__item" for="question1__other">
-                <input class="question1__input" id="question1__other" type="radio" name="question1">
+                <input class="question1__input" id="question1__other" data-choise="other" type="radio" name="question1">
                 <div class="question1__image"> <img src="./assets/images/questions/question1/road.jpg" alt=""></div>
-                <p class="question1__text">Другое  </p>
+                <p class="question1__text">Другое      </p>
+              </label>
+              <!--label(for="question1__cottages").question1__item
+              input#question1__cottages.question1__input(type="radio", name="question1")
+              .question1__image 
+                  img(src="./assets/images/questions/question1/cottages.jpg", alt="")
+              p.question1__text Поселок
+              
+              
+                
+              -->
+              <!--label(for="question1__parking").question1__item
+              input#question1__parking.question1__input(type="radio", name="question1")
+              .question1__image 
+                  img(src="./assets/images/questions/question1/parking.jpg", alt="")
+              p.question1__text Парковка
+              
+              -->
+              <!--label(for="question1__elevator").question1__item
+              input#question1__elevator.question1__input(type="radio", name="question1") 
+              .question1__image 
+                  img(src="./assets/images/questions/question1/elevator.jpg", alt="")
+              p.question1__text Лифт  
+              -->
+            </div>
+            <div class="question2 camera-count" id="question2">
+              <div class="camera-count__item camera-count__house"> 
+                <div class="range"> 
+                  <p class="range__title">Камеры по периметру дома, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры по периметру участка, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камера внутри дома, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__folder">
+                <div class="range"> 
+                  <p class="range__title">Камеры на склад, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в зону погрузки/разгрузки, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камера в подсобые помещения, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Другое(въезд, парковка, запасные выходы), шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__shop">
+                <div class="range"> 
+                  <p class="range__title">Камеры в зал, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на кассу, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в подсобые помещения, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на улицу, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__school">
+                <div class="range"> 
+                  <p class="range__title">Камеры по периметру, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на входе/выходе, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в коридоре, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в классах, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__office">
+                <div class="range"> 
+                  <p class="range__title">Камеры в кабинет, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на ресепшен, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в переговорную, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на улицу, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__tszh">
+                <div class="range"> 
+                  <p class="range__title">Камеры на этажах, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры перед входной группой, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в лифтах, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на парковке, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры во дворе, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__construction">
+                <div class="range"> 
+                  <p class="range__title">Панорамные камеры, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на строительной площадке, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры на въезд/выезд, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры склад материалов, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Камеры в бытовых помещениях, шт:</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__other">
+                <div class="range"> 
+                  <p class="range__title">Камера для помещений, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+                <div class="range"> 
+                  <p class="range__title">Уличная камера, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="camera-count__item camera-count__flat">
+                <div class="range"> 
+                  <p class="range__title">Камера для помещений, шт</p>
+                  <div class="range__field"> 
+                    <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="question3 archieve" id="question3">
+              <label class="archieve__item">
+                <input class="archieve__input custom-radio" id="archieve__7" type="radio" name="archieve_size" checked>
+                <div class="archieve__radio radio"> 
+                  <div class="archieve__radio-mark radio__mark"></div>
+                </div>
+                <p class="archieve__title">7 дней</p>
+              </label>
+              <label class="archieve__item">
+                <input class="archieve__input custom-radio" id="archieve__14" type="radio" name="archieve_size">
+                <div class="archieve__radio radio"> 
+                  <div class="archieve__radio-mark radio__mark"></div>
+                </div>
+                <p class="archieve__title">14 дней</p>
+              </label>
+              <label class="archieve__item">
+                <input class="archieve__input custom-radio" id="archieve__30" type="radio" name="archieve_size">
+                <div class="archieve__radio radio"> 
+                  <div class="archieve__radio-mark radio__mark"></div>
+                </div>
+                <p class="archieve__title">30 дней</p>
+              </label>
+            </div>
+            <div class="question4 doppel" id="question4">
+              <label class="doppel__item">
+                <p class="doppel__title">Требуется источник резервного питания</p>
+                <input class="archieve__input custom-check" id="reserve_need" type="checkbox" name="reserve_need">
+                <div class="doppel__checkbox checkbox"> 
+                  <div class="doppel__checkbox-mark checkbox__mark"></div>
+                </div>
+              </label>
+              <label class="doppel__item">
+                <p class="doppel__title">На объекте есть интернет</p>
+                <input class="archieve__input custom-check" id="internet_need" type="checkbox" name="internet_need">
+                <div class="doppel__checkbox checkbox"> 
+                  <div class="doppel__checkbox-mark checkbox__mark"></div>
+                </div>
+              </label>
+              <label class="doppel__item">
+                <p class="doppel__title">Требуется запись звука</p>
+                <input class="archieve__input custom-check" id="sound_need" type="checkbox" name="sound_need">
+                <div class="doppel__checkbox checkbox"> 
+                  <div class="doppel__checkbox-mark checkbox__mark"></div>
+                </div>
+              </label>
+              <div class="range doppel__soundrecord_hidden" id="doppel__soundrecord">
+                <p class="range__title">Камеры со звуком, шт</p>
+                <div class="range__field"> 
+                  <input class="range__slider" id="count-on-street" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="question5 fast" id="question5">
+              <label class="fast__item">
+                <input class="fast__input custom-radio" id="fast_high" type="radio" name="fast_level">
+                <div class="fast__radio radio"> 
+                  <div class="fast__radio-mark radio__mark"></div>
+                </div>
+                <p class="fast__title">Как можно быстрее</p>
+              </label>
+              <label class="fast__item">
+                <input class="fast__input custom-radio" id="fast__middle" type="radio" name="fast_level">
+                <div class="fast__radio radio"> 
+                  <div class="fast__radio-mark radio__mark"></div>
+                </div>
+                <p class="fast__title">В ближайшую неделю</p>
+              </label>
+              <label class="fast__item">
+                <input class="fast__input custom-radio" id="fast__low" type="radio" name="fast_level">
+                <div class="fast__radio radio"> 
+                  <div class="fast__radio-mark radio__mark"></div>
+                </div>
+                <p class="fast__title">Не горит, просто проверяю цены</p>
+              </label>
+              <label class="fast__item">
+                <input class="fast__input custom-radio" id="fast__own" type="radio" name="fast_level">
+                <div class="fast__radio radio"> 
+                  <div class="fast__radio-mark radio__mark"></div>
+                </div>
+                <p class="fast__title">Свой ответ</p>
+              </label>
+              <div class="fast__ownanswer fast__ownanswer_hidden">
+                <textarea class="fast__area" id="fast__area" name=""> </textarea>
+              </div>
+            </div>
+            <div class="question6 sizes" id="question6">
+              <div class="sizes__item"> 
+                <p class="sizes__text">Контент добавляется</p>
+              </div>
+            </div>
+            <div class="question7 complectation" id="question7">
+              <label class="complectation__item">
+                <input class="complectation__input custom-radio" id="complectation_full" type="radio" name="complectation_level">
+                <div class="complectation__radio radio"> 
+                  <div class="complectation__radio-mark radio__mark"></div>
+                </div>
+                <p class="complectation__title">Нужен комплект и монтаж</p>
+              </label>
+              <label class="complectation__item">
+                <input class="complectation__input custom-radio" id="complectation__small" type="radio" name="complectation_level">
+                <div class="complectation__radio radio"> 
+                  <div class="complectation__radio-mark radio__mark"></div>
+                </div>
+                <p class="complectation__title">Нужен комплект оборудования</p>
               </label>
             </div>
           </div>
@@ -105,21 +429,6 @@
           </div><a class="quiz__contact contact" href=""> 
             <div class="contact__logo"> <img class="contact__img" src="./assets/images/logo/whatsapp_green.png" alt="wh-logo"></div>
             <p class="contact__text">Возникли вопросы?<br>Напишите нам в WhatsApp</p></a>
-          <!--.quiz__questions 
-          p.quiz__about Пара минут на ответы - и коммерческое предложение у Вас на почте
-          h2.quiz__question
-          .quiz__progress
-              .quiz__progress-line 
-                  .quiz__progress-fill
-          .quiz__stepbody
-              .quiz__step1.step1
-                  
-          .quiz__buttons 
-              button.quiz__back.button
-                  span.button__text Назад
-              button.quiz__forward.button
-                  span.button__text Далее
-          -->
           <!--.quiz__aside
           .quiz__choose 
           .quiz__comment
