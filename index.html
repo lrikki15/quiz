@@ -27,6 +27,11 @@
           </div>
         </div>
         <div class="quiz">
+          <div class="comments"> 
+            <div class="comments__close"><i class="fas fa-times"></i></div>
+            <h2 class="comments__title">Комментарий</h2>
+            <p class="comments__content" id="comments-content"> </p>
+          </div>
           <div class="quiz__header"> 
             <div class="quiz__header-logo"> <img class="quiz__header-logo-img" src="./assets/images/logo/logo-small.png" alt="Логотип"></div>
           </div>
@@ -348,7 +353,7 @@
                 </div>
               </label>
               <label class="doppel__item">
-                <p class="doppel__title">На объекте есть интернет</p>
+                <p class="doppel__title">На объекте требуется подключение к интернету</p>
                 <input class="archieve__input custom-check" id="internet_need" type="checkbox" name="internet_need">
                 <div class="doppel__checkbox checkbox"> 
                   <div class="doppel__checkbox-mark checkbox__mark"></div>
@@ -407,13 +412,13 @@
                 <div class="range"> 
                   <p class="range__title">Длина, м </p>
                   <div class="range__field"> 
-                    <input class="range__slider" id="square-object-long" type="range" name="count-on-street" min="0" max="1000" value="0" steps="1"><span class="range__value">0</span>
+                    <input class="range__slider" id="square-object-long" type="range" name="count-on-street" min="0" max="100" value="0" steps="1"><span class="range__value">0</span>
                   </div>
                 </div>
                 <div class="range"> 
                   <p class="range__title">Ширина, м </p>
                   <div class="range__field"> 
-                    <input class="range__slider" id="square-object-width" type="range" name="count-on-street" min="0" max="1000" value="0" steps="1"><span class="range__value">0</span>
+                    <input class="range__slider" id="square-object-width" type="range" name="count-on-street" min="0" max="100" value="0" steps="1"><span class="range__value">0</span>
                   </div>
                 </div>
               </div>
@@ -422,13 +427,13 @@
                 <div class="range"> 
                   <p class="range__title">Длина, м </p>
                   <div class="range__field"> 
-                    <input class="range__slider" id="square-perimeter-long" type="range" name="count-on-street" min="0" max="1000" value="0" steps="1"><span class="range__value">0</span>
+                    <input class="range__slider" id="square-perimeter-long" type="range" name="count-on-street" min="0" max="100" value="0" steps="1"><span class="range__value">0</span>
                   </div>
                 </div>
                 <div class="range"> 
                   <p class="range__title">Ширина, м</p>
                   <div class="range__field"> 
-                    <input class="range__slider" id="square-perimeter-width" type="range" name="count-on-street" min="0" max="1000" value="0" steps="1"><span class="range__value">0</span>
+                    <input class="range__slider" id="square-perimeter-width" type="range" name="count-on-street" min="0" max="100" value="0" steps="1"><span class="range__value">0</span>
                   </div>
                 </div>
               </div>
