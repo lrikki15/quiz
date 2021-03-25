@@ -39,7 +39,7 @@
             <p class="quiz__question-text">Для какого объекта Вам необходима система видеонаблюдения?</p>
           </div>
           <div class="quiz__question-body"> 
-            <div id="object">    
+            <div id="object">  
               <label class="object__item" for="object__house">
                 <input class="object__input" id="object__house" data-choise="house" type="radio" name="object">
                 <div class="object__image"> <img src="./assets/images/questions/question1/home.jpg" alt=""></div>
@@ -460,42 +460,51 @@
             <button class="quiz__button quiz__button_circle button"><span><span class="button__text">i</span></span></button>
             <button class="quiz__button quiz__button_forward button"><span class="button__text">Далее</span><i class="fas fa-arrow-right button__arrow button__arrow"></i></button>
           </div>
+        </div>
+        <div class="quiz__result result" id="quiz__result">
+          <div class="result__container container">
+            <div class="result__icon"> <img src="./assets/images/logo/result.svg" alt="" srcset=""></div>
+            <h2 class="result__title">Стоимость вашего комплекта с установкой:</h2>
+            <div class="result__main-price"><span class="result__main-price-number">86578</span> <span class="result__main-price-currency">руб.</span>
+            </div>
+            <p class="result__main-complect">Камеры высокого разрешения</p>
+            <button class="quiz__button result__button_getOffer button"><span class="button__text">Скачать предложение в PDF</span></button>
+            <button class="quiz__button result__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+          </div>
+        </div>
+        <div class="quiz__form form" id="quiz__form">
+          <div class="form__container container">
+            <p class="form__head-text">В течение 5 минут мы пришлем предложение на Вашу почту.</p>
+            <p class="form__head-text">Расчет будет выполнен для разных ценовых категорий оборудования.</p>
+            <div class="form__form"> 
+              <div class="form__item">
+                <label for="form__name">Имя<span class = 'require'>*</span></label>
+                <input class="_req" id="form__name" type="text" name="" require>
+              </div>
+              <div class="form__item">
+                <label for="form__phone">Номер телефона<span class = 'require'>*</span></label>
+                <input class="_req" id="form__phone" type="tel" name="" require>
+              </div>
+              <div class="form__item">
+                <label for="form__mail">E-mail<span class = 'require'>*</span></label>
+                <input class="_req" id="form__mail" type="tel" name="" require>
+              </div>
+              <label class="form__agreement agreement" for="agreement__input"> 
+                <input class="agreement__input custom-check" id="agreement__input" type="checkbox" name="agreement__input">
+                <div class="agreement__checkbox checkbox"> 
+                  <div class="agreement__checkbox-mark checkbox__mark"></div>
+                </div>
+                <p class="agreement__title">Даю согласие на обработку персональных данных<span class = 'require'>*</span></p>
+              </label>
+            </div>
+            <button class="quiz__button form__button_sendOffer button"><span class="button__text">Отправить расчет на почту</span></button>
+            <button class="quiz__button form__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+          </div>
           <!--a(href="").quiz__contact.contact 
           .contact__logo 
               img(src="./assets/images/logo/whatsapp_green.png", alt="wh-logo").contact__img  
           p.contact__text Возникли вопросы?<br>Напишите нам в WhatsApp
-          
-          
           -->
-          <!--.quiz__aside
-          .quiz__choose 
-          .quiz__comment
-              .quiz__specialist 
-                  .quiz__specialist-photo 
-                  .quiz__specialist-info
-                      p.quiz__specialist-name Алексей 
-                      p.quiz__specialist-position Ведущий специалист 
-              .quiz__comment-line 
-              .quiz__comment-body 
-                  p.quiz__comment1
-                  p.quiz__comment2
-                  p.quiz__comment3
-                  p.quiz__comment4
-                  p.quiz__comment5
-                  p.quiz__comment6
-                  p.quiz__comment7
-                  p.quiz__comment8
-                  p.quiz__comment9
-          .quiz__estimate
-          .quiz__link 
-              .quiz__link-logo
-                  img(src="", alt="").quiz__link-img 
-              .quiz__link-info 
-                  p.quiz__link-title
-                  p.quiz__link-connectus
-          -->
-          <!--.quiz__final-page-->
-          <!--.quiz__contact-form-->
         </div>
       </div>
     </div>
