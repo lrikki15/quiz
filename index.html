@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/png">
     <script src="./modules/jquery-3.5.1.min.js"></script>
+    <script src="./modules/pdfmake.min.js"></script>
+    <script src="./modules/vfs_fonts.js"></script>
     <script src="./js/index.js"></script>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="technoseti.ru">
@@ -32,9 +34,10 @@
               <h1 class="preload__title">Техносети</h1>
             </div>
             <p class="preload__subtitle"> Системы видеонаблюдения в Архангельске</p>
-            <p class="preload__offer">Ответьте на 9 вопросов и получите коммерческое предложение в течение 5 минут</p>
+            <p class="preload__offer">Ответьте на 8 вопросов и получите коммерческое предложение в течение 5 минут</p>
             <button class="preload__button button button_blue"><span class="button__text">Начать</span><i class="fas fa-arrow-right button__arrow"></i></button>
           </div>
+          <p class="preload__contacts"> <span class="preload__inn">ИНН: 292401491232</span><span class="preload__ogrn">ОГРН: 316290100074359 от 02.06.2016</span><span class="preload__phone">Телефон: +79212431905 </span><span class="preload__email">Почта: mail@tehnoseti29.ru</span></p>
         </div>
         <div class="quiz">
           <div class="comments"> 
@@ -496,30 +499,24 @@
         <div class="quiz__result result" id="quiz__result">
           <div class="result__container container">
             <div class="result__icon"> <img src="./assets/images/logo/result.svg" alt="" srcset=""></div>
-            <h2 class="result__title">Стоимость вашего комплекта с установкой:</h2>
+            <h2 class="result__title">Примерная стоимость вашего комплекта с установкой составит</h2>
             <div class="result__main-price"><span class="result__main-price-number">86578</span> <span class="result__main-price-currency">руб.</span>
             </div>
-            <p class="result__download-offer">Чтобы узнать про стоимость каждого отдельного параметра, скачайте подробный расчет в формате PDF </p>
-            <button class="quiz__button result__button_getOffer button"><span class="button__text">Скачать предложение в PDF</span></button>
-            <button class="quiz__button result__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
-          </div>
-        </div>
-        <div class="quiz__form form" id="quiz__form">
-          <div class="form__container container">
-            <p class="form__head-text">В течение 5 минут мы пришлем предложение на Вашу почту.</p>
-            <p class="form__head-text">Расчет будет выполнен для разных ценовых категорий оборудования.</p>
-            <form class="form__form" action="#" method="post"> 
-              <div class="form__item">
-                <label for="form__name">Имя<span class = 'require'>*</span></label>
-                <input class="_valid" id="form__name" type="text" name="form__name">
-              </div>
-              <div class="form__item">
-                <label for="form__phone">Номер телефона<span class = 'require'>*</span></label>
-                <input class="_valid" id="form__phone" type="tel" name="form__phone">
-              </div>
-              <div class="form__item">
-                <label for="form__mail">E-mail<span class = 'require'>*</span></label>
-                <input class="_valid" id="form__mail" type="email" name="form__mail">
+            <p class="result__download-offer">Чтобы получить подробное коммерческое предложение в течение 5 минут, оставьте адрес электронной почты и контактные данные </p>
+            <form class="result__form form" action="#" method="post" id="result__form">
+              <div class="form__fields">
+                <div class="form__item">
+                  <label for="form__mail">E-mail<span class = 'require'>*</span></label>
+                  <input class="_valid" id="result__form-mail" type="email" name="form__mail">
+                </div>
+                <div class="form__item">
+                  <label for="form__name">Имя<span class = 'require'>*</span></label>
+                  <input class="_valid" id="form__name" type="text" name="form__name">
+                </div>
+                <div class="form__item">
+                  <label for="form__phone">Номер телефона<span class = 'require'>*</span></label>
+                  <input class="_valid" id="form__phone" type="tel" name="form__phone">
+                </div>
               </div>
               <label class="form__agreement agreement" for="agreement__input"> 
                 <input class="agreement__input custom-check _valid" id="agreement__input" type="checkbox" name="agreement__input">
@@ -528,9 +525,14 @@
                 </div>
                 <p class="agreement__title">Даю согласие на обработку персональных данных<span class = 'require'>*</span></p>
               </label>
-              <button class="quiz__button form__button_sendOffer button" type="submit"><span class="button__text">Отправить расчет на почту</span></button>
+              <button class="quiz__button result__button_getOffer button" type="submit"><span class="button__text">Отправить</span></button>
             </form>
-            <button class="quiz__button form__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+            <button class="quiz__button result__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+          </div>
+        </div>
+        <div class="quiz__succesfull succesfull" id="quiz__succesfull">
+          <div class="succesfull__container container">
+            <p class="succesfull__text">Спасибо!</p>
           </div>
         </div>
       </div>
