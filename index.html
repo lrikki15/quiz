@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Red+Rose:wght@300;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css?{{version}}">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/png">
     <script src="./modules/jquery-3.5.1.min.js"></script>
     <script src="./modules/pdfmake.min.js"></script>
     <script src="./modules/vfs_fonts.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js?{{version}}"></script>
+    <script src="./js/quizData.js?{{version}}"></script>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="technoseti.ru">
     <meta property="og:url" content="technoseti.ru">
@@ -23,23 +24,43 @@
     <meta property="og:image" content="https://lrikki15.github.io/techno_quiz/assets/images/logo/opengraph.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="512">
+    <!-- <!— Yandex.Metrika counter —>
+     <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+      ym(78201376, "init", {
+      clickmap:true,
+      trackLinks:true,
+    accurateTrackBounce:true,
+       webvisor:true
+       });
+       </script>
+       <noscript><div><img src="https://mc.yandex.ru/watch/78201376" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+       <!— /Yandex.Metrika counter —>        
+    
+    -->
   </head>
   <body>
     <div id="root">
+      <div class="blur-layer"></div>
       <div class="wrapper">
         <div class="quiz__preload preload" id="quiz__preload"> 
           <div class="preload__container container">
             <div class="preload__logotitle">
               <div class="preload__logo"> <img class="preload__logo-img" src="./assets/images/logo/logo-cut.png" alt="Логотип"></div>
-              <h1 class="preload__title">Техносети</h1>
+              <h1 class="preload__name">Техносети</h1>
             </div>
-            <p class="preload__subtitle"> Системы видеонаблюдения в Архангельске</p>
-            <p class="preload__offer">Ответьте на 8 вопросов и получите коммерческое предложение в течение 5 минут</p>
-            <button class="preload__button button button_blue"><span class="button__text">Начать</span><i class="fas fa-arrow-right button__arrow"></i></button>
+            <p class="preload__subtitle"> Системы видеонаблюдения в Архангельске и области</p>
+            <p class="preload__contacts"> <span class="preload__inn">ИНН:292401491232</span><span class="preload__ogrn">ОГРН:316290100074359</span></p>
+            <h2 class="preload__title">Cтоимость видеонаблюдения</h2>
+            <p class="preload__offer">Ответьте на вопросы и в течение минуты получите коммерческое предложение с точностью цены до 98%* </p>
+            <button class="preload__button button button_blue"><span class="button__text">Рассчитать стоимость</span></button>
+            <p class="preload__note">*Проверили 438 архангелогородцев</p>
           </div>
-          <p class="preload__contacts"> <span class="preload__inn">ИНН: 292401491232</span><span class="preload__ogrn">ОГРН: 316290100074359 от 02.06.2016</span><span class="preload__phone">Телефон: +79212431905 </span><span class="preload__email">Почта: mail@tehnoseti29.ru</span></p>
         </div>
-        <div class="quiz">
+        <div class="quiz isHidden">
           <div class="comments"> 
             <div class="comments__close"><i class="fas fa-times"></i></div>
             <h2 class="comments__title">Комментарий</h2>
@@ -54,27 +75,16 @@
           <div class="quiz__info"> 
             <div class="quiz__turn-info"></div>
             <div class="quiz__comment-aside">
-              <div class="quiz__specialist specialist">
-                <div class="specialist__photo"> <img src="./assets/images/alexey.png" alt="" srcset=""></div>
-                <div class="specialist__info"> 
-                  <div class="specialist__name">Алексей</div>
-                  <div class="specialist__position">Ведущий специалист проектного отдела</div>
-                </div>
-              </div>
               <div class="quiz__comment-body">
                 <p>Комментарий</p>
               </div>
             </div>
-            <div class="quiz__smeta"></div>
-            <div class="quiz__contact contact"> 
-              <div class="contact__link">
+            <div class="quiz__contact contact"> <a class="contact__link" href="https://wa.me/79600130146">
                 <div class="contact__logo"> <img class="contact__img" src="./assets/images/logo/whatsapp_green.png" alt="wh-logo"></div>
-                <p class="contact__text">Возникли вопросы?<br>Напишите нам в WhatsApp</p>
-              </div>
-            </div>
+                <p class="contact__text">Возникли вопросы?<br>Напишите нам в WhatsApp</p></a></div>
           </div>
           <div class="quiz__question-body"> 
-            <div id="object">  
+            <div class="question-body" id="object">  
               <label class="object__item" for="object__house">
                 <input class="object__input" id="object__house" data-choise="house" type="radio" name="object">
                 <div class="object__image"> <img src="./assets/images/questions/question1/home.jpg" alt=""></div>
@@ -121,30 +131,7 @@
                 <p class="object__text">Другое      </p>
               </label>
             </div>
-            <div class="location" id="location">
-              <label class="location__item">
-                <input class="location__input custom-radio" id="location__archangelsk" type="radio" name="location_size" data-location="arhangelsk">
-                <div class="location__radio radio"> 
-                  <div class="location__radio-mark radio__mark"></div>
-                </div>
-                <p class="location__title">Архангельск (+20 км)</p>
-              </label>
-              <label class="location__item">
-                <input class="location__input custom-radio" id="location__severodvinsk" type="radio" name="location_size" data-location="severodvinsk">
-                <div class="location__radio radio"> 
-                  <div class="location__radio-mark radio__mark"></div>
-                </div>
-                <p class="location__title">Северодвинск, новодвинск</p>
-              </label>
-              <label class="location__item">
-                <input class="location__input custom-radio" id="location__region" type="radio" name="location_size" data-location="region">
-                <div class="location__radio radio"> 
-                  <div class="location__radio-mark radio__mark"></div>
-                </div>
-                <p class="location__title">Архангельская область</p>
-              </label>
-            </div>
-            <div class="camera-count" id="cameracount">
+            <div class="camera-count isHidden question-body" id="cameracount">
               <div class="camera-count__item camera-count__house"> 
                 <div class="range"> 
                   <p class="range__title">Камера внутри дома, шт:</p>
@@ -356,92 +343,45 @@
                 </div>
               </div>
             </div>
-            <div class="archieve" id="archieve">
-              <label class="archieve__item">
-                <input class="archieve__input custom-radio" id="archieve__7" type="radio" name="archieve_size" data-days="7">
-                <div class="archieve__radio radio"> 
-                  <div class="archieve__radio-mark radio__mark"></div>
-                </div>
-                <p class="archieve__title">7 дней</p>
+            <div class="doppel question-body isHidden" id="doppel">
+              <div class="doppel__item archieve-item">
+                <p class="doppel__title archieve-item__text">Время хранения архива (в днях)</p>
+                <label class="radio-item">
+                  <input class="radio-item__input" id="archieve__7" type="radio" name="archieve_size" data-days="7" checked>
+                  <p class="radio-item__title">1 - 7</p>
+                </label>
+                <label class="radio-item">
+                  <input class="radio-item__input" id="archieve__14" type="radio" name="archieve_size" data-days="14">
+                  <p class="radio-item__title">8 - 14</p>
+                </label>
+                <label class="radio-item">
+                  <input class="radio-item__input" id="archieve__30" type="radio" name="archieve_size" data-days="30">
+                  <p class="radio-item__title">15 - 30</p>
+                </label>
+              </div>
+              <input class="doppel__input checkbox-item__input" id="reserve_need" type="checkbox" name="reserve_need">
+              <label class="doppel__item checkbox-item" for="reserve_need">
+                <p class="doppel__title checkbox-item__text">Установить источник резервного питания</p>
+                <div class="doppel__checkbox checkbox-item__checkbox"><i class="far fa-check-circle"></i></div>
               </label>
-              <label class="archieve__item">
-                <input class="archieve__input custom-radio" id="archieve__14" type="radio" name="archieve_size" data-days="14">
-                <div class="archieve__radio radio"> 
-                  <div class="archieve__radio-mark radio__mark"></div>
-                </div>
-                <p class="archieve__title">14 дней</p>
+              <input class="doppel__input checkbox-item__input" id="internet_need" type="checkbox" name="reserve_need">
+              <label class="doppel__item checkbox-item" for="internet_need">
+                <p class="doppel__title checkbox-item__text">Подключить объект к интернету</p>
+                <div class="doppel__checkbox checkbox checkbox-item__checkbox"><i class="far fa-check-circle"></i></div>
               </label>
-              <label class="archieve__item">
-                <input class="archieve__input custom-radio" id="archieve__30" type="radio" name="archieve_size" data-days="30">
-                <div class="archieve__radio radio"> 
-                  <div class="archieve__radio-mark radio__mark"></div>
-                </div>
-                <p class="archieve__title">30 дней</p>
-              </label>
-            </div>
-            <div class="doppel" id="doppel">
-              <label class="doppel__item">
-                <p class="doppel__title">Требуется источник резервного питания</p>
-                <input class="doppel__input custom-check" id="reserve_need" type="checkbox" name="reserve_need">
-                <div class="doppel__checkbox checkbox"> 
-                  <div class="doppel__checkbox-mark checkbox__mark"></div>
-                </div>
-              </label>
-              <label class="doppel__item">
-                <p class="doppel__title">На объекте требуется подключение к интернету</p>
-                <input class="doppel__input custom-check" id="internet_need" type="checkbox" name="internet_need">
-                <div class="doppel__checkbox checkbox"> 
-                  <div class="doppel__checkbox-mark checkbox__mark"></div>
-                </div>
-              </label>
-              <label class="doppel__item">
-                <p class="doppel__title">Требуется запись звука</p>
-                <input class="doppel__input custom-check" id="sound_need" type="checkbox" name="sound_need">
-                <div class="doppel__checkbox checkbox"> 
-                  <div class="doppel__checkbox-mark checkbox__mark"></div>
-                </div>
-              </label>
-              <div class="range doppel__soundrecord_hidden" id="doppel__soundrecord">
+              <div class="range" id="doppel__soundrecord">
                 <p class="range__title">Камеры со звуком, шт</p>
                 <div class="range__field"> 
-                  <input class="range__slider" id="sound_need_range" type="range" name="count-on-street" min="0" max="16" value="0" steps="1"><span class="range__value">0</span>
+                  <input class="range__slider" id="sound_need_range" type="range" name="count-on-street" min="0" max="1" value="0" steps="1"><span class="range__value">0    </span>
                 </div>
               </div>
+              <input class="doppel__input checkbox-item__input" id="sound_need" type="checkbox" name="sound_need">
+              <label class="doppel__item checkbox-item" id="doppel__soundrecord__checkbox" for="sound_need">
+                <p class="doppel__title checkbox-item__text">Запись звука на камерах</p>
+                <div class="doppel__checkbox checkbox checkbox-item__checkbox"><i class="far fa-check-circle"></i></div>
+              </label>
             </div>
-            <div class="fast" id="howfast">
-              <label class="fast__item">
-                <input class="fast__input custom-radio" id="fast_high" type="radio" name="fast_level" data-fast="Как можно быстрее">
-                <div class="fast__radio radio"> 
-                  <div class="fast__radio-mark radio__mark"></div>
-                </div>
-                <p class="fast__title">Как можно быстрее</p>
-              </label>
-              <label class="fast__item">
-                <input class="fast__input custom-radio" id="fast_middle" type="radio" name="fast_level" data-fast="В ближайшую неделю">
-                <div class="fast__radio radio"> 
-                  <div class="fast__radio-mark radio__mark"></div>
-                </div>
-                <p class="fast__title">В ближайшую неделю</p>
-              </label>
-              <label class="fast__item">
-                <input class="fast__input custom-radio" id="fast_low" type="radio" name="fast_level" data-fast="Не горит, просто проверяю цены">
-                <div class="fast__radio radio"> 
-                  <div class="fast__radio-mark radio__mark"></div>
-                </div>
-                <p class="fast__title">Не горит, просто проверяю цены</p>
-              </label>
-              <label class="fast__item">
-                <input class="fast__input custom-radio" id="fast_own" type="radio" name="fast_level" data-fast="own">
-                <div class="fast__radio radio"> 
-                  <div class="fast__radio-mark radio__mark"></div>
-                </div>
-                <p class="fast__title">Свой ответ</p>
-              </label>
-              <div class="fast__ownanswer fast__ownanswer_hidden">
-                <textarea class="fast__area" id="fast_area" name=""> </textarea>
-              </div>
-            </div>
-            <div class="square" id="square">
+            <div class="square question-body isHidden" id="square">
               <div class="square__item"> 
                 <p class="square__title">Помещение/здание, оснащаемое камерами</p>
                 <div class="range"> 
@@ -473,36 +413,33 @@
                 </div>
               </div>
             </div>
-            <div class="complectation" id="complectation">
-              <label class="complectation__item">
-                <input class="complectation__input custom-radio" id="complectation_full" data-name="montage" type="radio" name="complectation_level">
-                <div class="complectation__radio radio"> 
-                  <div class="complectation__radio-mark radio__mark"></div>
-                </div>
-                <p class="complectation__title">Нужен комплект и монтаж</p>
+            <div class="complectation question-body isHidden" id="complectation">
+              <label class="radio-item">
+                <input class="radio-item__input" id="complectation_full" data-name="montage" type="radio" name="complectation_level" checked>
+                <p class="radio-item__text">Монтаж системы под ключ</p>
               </label>
-              <label class="complectation__item">
-                <input class="complectation__input custom-radio" id="complectation__small" data-name="complect" type="radio" name="complectation_level">
-                <div class="complectation__radio radio"> 
-                  <div class="complectation__radio-mark radio__mark"></div>
-                </div>
-                <p class="complectation__title">Нужен комплект оборудования</p>
+              <label class="radio-item">
+                <input class="radio-item__input" id="complectation__small" data-name="complect" type="radio" name="complectation_level">
+                <p class="radio-item__text">Только комплект оборудования</p>
               </label>
             </div>
           </div>
           <div class="quiz__buttons"> 
-            <button class="quiz__button quiz__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
+            <button class="quiz__button quiz__button_back button"><span class="button__text">Назад</span></button>
             <button class="quiz__button quiz__button_circle button"><span><span class="button__text">i</span></span></button>
-            <button class="quiz__button quiz__button_forward button"><span class="button__text">Далее</span><i class="fas fa-arrow-right button__arrow button__arrow"></i></button>
+            <button class="quiz__button quiz__button_forward button"><span class="button__text">Далее</span></button>
           </div>
         </div>
-        <div class="quiz__result result" id="quiz__result">
+        <div class="quiz__result result isHidden" id="quiz__result">
           <div class="result__container container">
             <div class="result__icon"> <img src="./assets/images/logo/result.svg" alt="" srcset=""></div>
-            <h2 class="result__title">Примерная стоимость вашего комплекта с установкой составит</h2>
-            <div class="result__main-price"><span class="result__main-price-number">86578</span> <span class="result__main-price-currency">руб.</span>
-            </div>
-            <p class="result__download-offer">Чтобы получить подробное коммерческое предложение в течение 5 минут, оставьте адрес электронной почты и контактные данные </p>
+            <h2 class="result__title">Вы ответили на все необходимые вопросы, остался последний шаг</h2>
+            <!-- .result__main-price
+            span.result__main-price-number 86578
+            = ' '
+            span.result__main-price-currency руб.
+            -->
+            <p class="result__download-offer">Оставьте свои контакты и получите подробное коммерческое предложение в формате PDF</p>
             <form class="result__form form" action="#" method="post" id="result__form">
               <div class="form__fields">
                 <div class="form__item">
@@ -511,11 +448,11 @@
                 </div>
                 <div class="form__item">
                   <label for="form__name">Имя<span class = 'require'>*</span></label>
-                  <input class="_valid" id="form__name" type="text" name="form__name">
+                  <input class="_valid" id="form__name" type="text" name="form__name" maxlength="15">
                 </div>
                 <div class="form__item">
-                  <label for="form__phone">Номер телефона<span class = 'require'>*</span></label>
-                  <input class="_valid" id="form__phone" type="tel" name="form__phone">
+                  <label for="form__phone">Номер телефона</label>
+                  <input class="_valid" id="form__phone" type="tel" name="form__phone" placeholder="+7-XXX-XXX-XX-XX">
                 </div>
               </div>
               <label class="form__agreement agreement" for="agreement__input"> 
@@ -525,14 +462,15 @@
                 </div>
                 <p class="agreement__title">Даю согласие на обработку персональных данных<span class = 'require'>*</span></p>
               </label>
+              <button class="quiz__button result__button_back button" type="button"><span class="button__text">Назад</span></button>
               <button class="quiz__button result__button_getOffer button" type="submit"><span class="button__text">Отправить</span></button>
             </form>
-            <button class="quiz__button result__button_back button"><i class="fas fa-arrow-right button__arrow button__arrow_back"></i><span class="button__text">Назад</span></button>
           </div>
         </div>
-        <div class="quiz__succesfull succesfull" id="quiz__succesfull">
+        <div class="quiz__succesfull succesfull isHidden" id="quiz__succesfull">
           <div class="succesfull__container container">
-            <p class="succesfull__text">Спасибо!</p>
+            <h2 class="succesfull__head-text">Спасибо!</h2>
+            <p class="succesfull__text">Пока формируется коммерческое предложение, предлагаем Вам скачать чек-лист по выбору компании для установки системы видеонаблюдения</p><a class="quiz__download download__button button" download href="https://disk.yandex.ru/i/aQg2ehIBjSqROw"><span class="button__text">Скачать PDF-документ</span></a>
           </div>
         </div>
       </div>
